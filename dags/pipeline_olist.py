@@ -51,7 +51,7 @@ def _get_snowflake_conn():
     """Retorna conexao Snowflake a partir da Connection do Airflow."""
     from snowflake.connector import connect
     from airflow.hooks.base import BaseHook
-    conn_info = BaseHook.get_connection("snowflake_default")
+    conn_info = BaseHook.get_connection("soldas_snowflake")
     extra = conn_info.extra_dejson if conn_info.extra_dejson else {}
     return connect(
         user=conn_info.login,
